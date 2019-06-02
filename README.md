@@ -1,3 +1,4 @@
+Preview: [https://luweij.github.io/react-adapter/demo/dist/](https://luweij.github.io/react-adapter/demo/dist/)
 # ListView
 ## 安装、调试
 ```js
@@ -13,9 +14,12 @@ $ npm run test
 ```
 
 ## What? Why?
-主要用于解决条目过长、item过于复杂的菜单内容渲染性能问题。目前两万条只带一个简单图片的实例中出现正常滚动菜单渲染出现明显卡顿，五万条出现浏览器崩溃现象。通过 List 可以简单解决该问题，因为只会渲染可见的部分。<br />如果是在包含 DOM 操作时候，或复杂 item （ 比如其中带有复杂SVG，节点内容会激增），这种负担会非常显著。甚至会在几十条内发生卡顿甚至浏览器崩溃。
 
-## How?
+主要解决react渲染超长（如1万条）listview的性能问题
+
+原理：通过计算适配，每次只渲染可见的部分
+
+## How to use?
 ```javascript
 import ListView from '../ListView';
 const { List, Adapter } = ListView;
